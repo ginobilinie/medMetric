@@ -92,7 +92,7 @@ def main():
     prePath = basePath + 'Top8'
 
     usingPythonLib = 0
-    basecmdline = "./EvaluateSegmentation  data/Ground_truth/subject-11-label.hdr data/Top8/method1/subject-11-label.hdr -use DICE,HDRFDST@0.95@,AVGDIST -xml res_sub11_method1.xml"
+    basecmdline = "./EvaluateSegmentation  data/Ground_truth/subject-11-label.hdr data/Top8/method1/subject-11-label.hdr -use DICE,HDRFDST@0.95@,AVGDIST -xml res_sub11_method1_csf.xml"
 
     #ids=[1,2,3,4,5,6,7,8,9,10,11] 
     N = 13 # # of subjects
@@ -156,10 +156,25 @@ def main():
                 np.save('asd4ISeg.npy', asdMat)
             else: #using C++ library
                 cmdline = basecmdline.replace('11', str(ind))
-                cmdline = cmdline.replace(method1, subDir)
-                gtFN = 'sub'+str(ind)+'.nii.gz'
-                preFN = 'sub'+str(ind)+'_'+subDir+'.nii.gz'
-                p = computeMetrics(gtLabel, preLabel, ind, cmdline, gtFN, preFN)
+                cmdline = cmdline.replace('Bern_IPMI', subDir)
+                cmdline = cmdline.replace('csf', 'wm')
+                gtFN = 'sub'+str(ind)+'_wm.nii.gz'
+                preFN = 'sub'+str(ind)+'_'+subDir+'_wm.nii.gz'
+                p = computeMetrics(gtLabel, preLabel, 1, cmdline, gtFN, preFN)
+                
+                cmdline = basecmdline.replace('11', str(ind))
+                cmdline = cmdline.replace('Bern_IPMI', subDir)
+                cmdline = cmdline.replace('csf', 'gm')
+                gtFN = 'sub'+str(ind)+'_gm.nii.gz'
+                preFN = 'sub'+str(ind)+'_'+subDir+'_gm.nii.gz'
+                p = computeMetrics(gtLabel, preLabel, 2, cmdline, gtFN, preFN)
+                
+                cmdline = basecmdline.replace('11', str(ind))
+                cmdline = cmdline.replace('Bern_IPMI', subDir)
+                cmdline = cmdline.replace('csf', 'csf')
+                gtFN = 'sub'+str(ind)+'_csf.nii.gz'
+                preFN = 'sub'+str(ind)+'_'+subDir+'_csf.nii.gz'
+                p = computeMetrics(gtLabel, preLabel, 3, cmdline, gtFN, preFN)
 #             allROIs = np.unique(gtROI)
 #             print 'ROIs is: ',allROIs
 #             for uniROI in allROIs: # for each ROI
