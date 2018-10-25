@@ -1,5 +1,6 @@
 '''
     Target: evaluate the Dice for white matter, grey matter and CSF for N subjects with M methods
+    Dong Nie @ Sep, 2017; Sep, 2018
 '''
 import os
 import numpy as np
