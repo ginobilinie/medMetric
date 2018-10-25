@@ -13,8 +13,9 @@ The following should be better installed, but not nessary if you directly use th
 
 
 Steps:
-1. Use computeMetric4iSeg.py to compute all the metrics you desire and store the results for each pair to a xml
+1. Use computeMetric4iSeg.py to compute all the metrics you desire and store the results for each pair to a xml.
 2. Use parseXML.py to parse all the generated xmls and generate a matrix. We store these matrics to npy file.
+3. Use drawFig.py to draw box-plot for each metric based on the different methods' performances on all the subjects.
 
 If you want to test the functions, you can use <a href='https://github.com/abseil/abseil-py'>absltest</a> to write a simple test unit.
 
