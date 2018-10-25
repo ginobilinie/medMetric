@@ -5,6 +5,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+## reference: https://matplotlib.org/examples/pylab_examples/boxplot_demo.html
 
 def main():
     diceFN = 'dsc4ISeg.npy'
