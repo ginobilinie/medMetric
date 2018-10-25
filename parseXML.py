@@ -1,3 +1,7 @@
+'''
+    Target: parse xml files to obtain a matrix descriptions for each of the metrics
+    Dong Nie @  Sep, 2018
+'''
 import os
 import numpy as np
 import SimpleITK as sitk
