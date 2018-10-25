@@ -5,8 +5,8 @@ I suppose you have installed:    <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu 16.04
      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;simpleITK 
      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;numpy
-     <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gcc 4.8+
-The following should be better installed, but not nessary if you donot directly use the binary copy of EvaluationSegmentation library I provided:
+     <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gcc 4.8+<br>
+The following should be better installed, but not nessary if you donot directly use the binary copy of EvaluationSegmentation library I provided:<br>
      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ITV
      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VTK
      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CMAKE
