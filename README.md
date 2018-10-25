@@ -14,4 +14,4 @@ The following should be better installed, but not nessary if you donot directly 
 
 if you want to test the functions, you can use <a href='https://github.com/abseil/abseil-py'>absltest</a> to write a simple test unit.
 
-In this copy of codes, we have referred to https://github.com/Visceral-Project/EvaluateSegmentation and https://github.com/deepmind/surface-distance.
+In this copy of codes, we have referred to https://github.com/Visceral-Project/EvaluateSegmentation and https://github.com/deepmind/surface-distance (the core metric computational lib is from these two copies in this current reporistory).
