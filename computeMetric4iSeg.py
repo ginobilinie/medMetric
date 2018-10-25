@@ -1,5 +1,5 @@
 '''
-    Target: evaluate the Dice for white matter, grey matter and CSF with each ROI (totally 83 ROI)
+    Target: evaluate the Dice for white matter, grey matter and CSF for N subjects with M methods
 '''
 import os
 import numpy as np
@@ -91,7 +91,7 @@ def main():
     prePath = basePath + 'Top8'
 
     usingPythonLib = 0
-    basecmdline = "./EvaluateSegmentation  data/Ground_truth/subject-11-label.hdr data/Top8/Bern_IPMI/subject-11-label.hdr -use DICE,HDRFDST@0.95@,AVGDIST -xml res_sub11_Bern_IPMI.xml"
+    basecmdline = "./EvaluateSegmentation  data/Ground_truth/subject-11-label.hdr data/Top8/method1/subject-11-label.hdr -use DICE,HDRFDST@0.95@,AVGDIST -xml res_sub11_method1.xml"
 
     #ids=[1,2,3,4,5,6,7,8,9,10,11] 
     N = 13 # # of subjects
@@ -103,7 +103,7 @@ def main():
     asdMat = np.zeros([N,M,3])
     ids=[11,12,13,14,15,16,17,18,19,20,21,22,23]
     #files=os.listdir([datapath,'*.hdr']) 
-    subDirs = ['MSL_SKKU','LIVIA','Bern_IPMI','Tu_Image','UPF_simbiosys','NeuroMTL','UPC_DLMI', 'LRDE']
+    subDirs = ['method1','method2','method3','method4','method5','method6','method7', 'method8']
     for i in range(0, len(ids)):
         ind=ids[i]    
         gtLabelfilename = 'subject-%d-label.hdr'%ind #provide a sample name of your filename of data here
@@ -155,7 +155,7 @@ def main():
                 np.save('asd4ISeg.npy', asdMat)
             else: #using C++ library
                 cmdline = basecmdline.replace('11', str(ind))
-                cmdline = cmdline.replace('Bern_IPMI', subDir)
+                cmdline = cmdline.replace(method1, subDir)
                 gtFN = 'sub'+str(ind)+'.nii.gz'
                 preFN = 'sub'+str(ind)+'_'+subDir+'.nii.gz'
                 p = computeMetrics(gtLabel, preLabel, ind, cmdline, gtFN, preFN)
