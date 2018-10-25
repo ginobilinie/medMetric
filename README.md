@@ -1,5 +1,5 @@
 # medMetric
-A script to compute metrics for medical images based on some public libraries
+A script to compute metrics for medical images based on some public libraries. Since it seems that it can only process the binary volumes, I write a wrapper to make it be able to work on mulpitle category volumes. I also made some subtle changes to the surface-distance computation which is not quite deterministic in original version.
 
 I suppose you have installed:    <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu 16.04
@@ -10,6 +10,7 @@ The following should be better installed, but not nessary if you donot directly 
      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ITV
      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VTK
      <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CMAKE
+
 
 if you want to test the functions, you can use <a href='https://github.com/abseil/abseil-py'>absltest</a> to write a simple test unit.
 
